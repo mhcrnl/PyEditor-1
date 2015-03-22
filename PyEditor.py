@@ -112,7 +112,7 @@ class MainWindow(wx.Frame):
     def OnSave(self, e):
         try:
             f = open(os.path.join(self.dirname, self.filename), 'w')
-            f.write(self.control.GetValue)
+            f.write(self.control.GetValue())
             f.close()
         except:
             try:
@@ -121,7 +121,7 @@ class MainWindow(wx.Frame):
                     self.filename = dlg.GetFilename()
                     self.dirname = dlg.GetDirectory()
                     f = open(os.path.join(self.dirname, self.filename), 'w')
-                    f.write(self.control.GetValue)
+                    f.write(self.control.GetValue())
                     f.close()
                 dlg.Destroy()
             except:
@@ -210,5 +210,5 @@ class MainWindow(wx.Frame):
 
 
 app = wx.App()
-frame = MainWindow(None, "My Text Editor")
+frame = MainWindow(None, "PyEditor")
 app.MainLoop()
